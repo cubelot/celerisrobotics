@@ -14,7 +14,27 @@
 
     <style>
     /* ===== HOMEPAGE-ONLY STYLES (linked only from main.html) ===== */
+:root {
+  /* 1. Define the global reusable variables */
+  --general-underline-color: rgba(181, 138, 50, 0.45);
+  --general-underline-thickness: 1px;
+  --general-underline-offset: 3px;
+}
 
+/* 2. Create a utility class you can add to any link */
+.general-underline {
+  color: inherit; 
+  text-decoration: underline; 
+  text-decoration-color: var(--general-underline-color); 
+  text-decoration-thickness: var(--general-underline-thickness); 
+  text-underline-offset: var(--general-underline-offset); 
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Optional hover state to make the underline fully opaque */
+.general-underline:hover {
+  text-decoration-color: rgba(181, 138, 50, 1);
+}
     /* HERO */
     .home-hero {
         position: relative;
